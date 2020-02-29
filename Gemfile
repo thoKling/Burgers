@@ -39,7 +39,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'rubyzip', '~> 1.2.2'
+  gem 'rubyzip', '~> 1.3.0'
 end
 
 group :development do
