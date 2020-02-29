@@ -21,3 +21,6 @@
 /yarn-error.log
 
 .byebug_history
+
+#Ignore Gemfile.lock because of Bundle version which is different on utbm and my pc
+Gemfile.lock
