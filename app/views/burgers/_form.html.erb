@@ -4,36 +4,36 @@
       <h2><%= pluralize(burger.errors.count, "error") %> prohibited this burger from being saved:</h2>
 
       <ul>
-      <% burger.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% burger.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-  
+
   <div class="field">
     <%= form.label :code %>
     <%= form.text_field :code %>
   </div>
-  
+
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :burger_name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_field :price, id: :burger_price %>
+    <%= form.text_field :price %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.text_field :image, id: :burger_image %>
+    <%= form.text_field :image %>
   </div>
 
   <div class="field">
     <%= form.label :nutriscore %>
-    <%= form.text_field :nutriscore, id: :burger_nutriscore %>
+    <%= form.text_field :nutriscore %>
   </div>
 
   <div class="actions">

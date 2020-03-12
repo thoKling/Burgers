@@ -1,29 +1,73 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @burger.code %>
-</p>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <p>
+        <strong>Code:</strong>
+        <%= @burger.code %>
+      </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @burger.name %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @burger.name %>
+      </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @burger.price %>
-</p>
+      <p>
+        <strong>Price:</strong>
+        <%= @burger.price %>
+      </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @burger.image %>
-</p>
+      <p>
+        <strong>Image:</strong>
+        <%= @burger.image %>
+      </p>
 
-<p>
-  <strong>Nutriscore:</strong>
-  <%= @burger.nutriscore %>
-</p>
+      <p>
+        <strong>Nutriscore:</strong>
+        <%= @burger.nutriscore %>
+      </p>
+    </div>
 
-<%= link_to 'Edit', edit_burger_path(@burger) %> |
-<%= link_to 'Back', burgers_path %>
+
+    <div id="accordion">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Liste des nutriments
+            </button>
+          </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Element</th>
+                  <th scope="col">Valeur</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                  <% @burger.get_nutriments.each do |ele| %>
+                  <tr>
+                    <td><%= ele[0] %></td>
+                    <td><%= ele[1] %></td>
+                  </tr>
+                  <% end %> 
+              </tbody>
+            </table>
+      
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to 'Edit', edit_burger_path(@burger) %> |
+  <%= link_to 'Back', burgers_path %>
+</div>
